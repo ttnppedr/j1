@@ -12,7 +12,7 @@
 3. 答完貼出自己的 source code 與執行結果
 ```
 
-## 練習題目
+## 第一階段
 
 ### 好想電影院規定除非完全沒有客人買票，否則就算只有一位顧客也照常播放電影。讓使用者輸入客人的人數，並用「!」判斷人數，不為零顯示「照常播放電影」。
 
@@ -64,6 +64,237 @@
 ![](https://i.imgur.com/rWpuyyk.png =500x)
 
 
-### 看完這些。並且將結果貼上來
+## 第二階段
 
-https://hackmd.io/p/BJzOOmVkW#/
+回答以下問題的 `console.log` 印出了什麼
+
+### 問題1
+
+```javascript
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+var a = function() {
+  console.log(b);
+  b = 3;
+}
+```
+
+### 問題2
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題3
+
+`function a1`加了一個`if`
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  if (1) {
+    console.log(b);
+    var b = 4;
+  }
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題4
+
+`var`改用`let`
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  if (1) {
+    console.log(b);
+    let b = 4;
+  }
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題5
+
+`var`, `let`, `const`的差別??
+
+```javascript=
+var a = 1;
+var a = 10;
+console.log(a);
+```
+```javascript=
+//ES6
+let b = 2;
+let b = 20;
+//b = 30;
+console.log(b);
+```
+```javascript=
+//ES6
+const c = 3;
+const c = 30;
+// c = 20;
+console.log(c);
+```
+
+### 問題6
+
+function name的用途。
+
+```javascript=
+var a = function b() {
+  console.log('c');
+}
+
+a();
+b();
+```
+
+### 問題7
+
+
+```javascript=
+function b() {
+  console.log('c');
+}
+
+var a = b();
+
+b();
+a();
+```
+
+### 問題8
+
+What is `this`？
+console.log(); 印出什麼呢？
+
+```javascript=
+var c = {
+  name: 'The c object',
+  log: function(){
+    var self = this;
+    log1 = function () {
+      console.log(self);
+      console.log(this);
+    }
+    this.log2 = function (){
+      console.log(self === this);
+  }
+  log1();
+  this.log2();
+  }
+}
+
+c.log();
+```
+[出處](http://disp.cc/b/11-9KhD)
+
+### 問題9
+
+
+```javascript=
+function getPerson() {
+  return
+  {
+    firstname: 'Knuckles'
+  }
+}
+
+console.log(getPerson());
+```
+
+### 問題10
+
+有一個`J()`的`constructor`
+
+```javascript=
+function J() {
+  this.name = "John";
+}
+
+var a = new J();
+a
+//J {name: "John"}
+a.__proto__.constructor
+//function J() {
+//  this.name = "John";
+// }
+J
+// function J() {
+//   this.name = "John";
+// }
+console.log(J.constructor);
+console.log(a.__proto__.__proto__.constructor);
+```
+
+最下面的`console.log()`會印什麼？
+
+
+### 問題11
+
+會不會執行`console.log("Hello");`?
+
+```javascript=
+var x = 10;
+switch(x) {
+    case "10": 
+    console.log("Hello");
+}
+```
+
+### 問題12
+
+請問會印出什麼
+
+```javascript=
+var i = 0;
+while(i --> 0) {
+  console.log(i);
+}
+```
+
+### 問題13
+
+```javascript=
+var a = [1, 2, 3]
+
+function foo(x) {
+    x.push(4)
+
+    x = [4, 5, 6]
+    x.push(7)
+}
+
+foo(a)
+console.log(a)
+```
+
+第二階段題目出處: https://hackmd.io/p/BJzOOmVkW#/
