@@ -11,6 +11,7 @@ rl.question('請輸入數值：', (num) => {
 
    if (!reg.test(num)) {
      console.loge("請輸入數字");
+     rl.close();
    }else{
      num = Number(num);
    }
