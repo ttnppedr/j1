@@ -10,6 +10,7 @@ rl.question('arr1 和 arr2 對應項相加', () => {
  const arr1 = [2, 3, 1, 7, 9];
  const arr2 = [8, 7, 9, 3, 1];
  const arr3 = [];
+ 
  arr1.forEach((item1,key1) => {
 
   let num = arr2.find((item2,key2) => {
