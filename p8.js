@@ -18,7 +18,7 @@ rl.question('請輸入數值：', (num) => {
    var times = 0;
    console.log(divi(num * 100, times));
 
-rl.close();
+
 });
 
 function divi(num, times) {
