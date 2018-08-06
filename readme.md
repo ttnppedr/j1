@@ -8,7 +8,7 @@
 步驟:
 
 1. 開新分支，用自己的英文名字命名
-2. 每一題 (每一個 h3 都是獨立的一題) 都要回答
+2. 每一題 (每一個 h3 都是獨立的一題) 都要回答，包含印出計算過程
 3. 答完貼出自己的 source code 與執行結果
 ```
 
@@ -24,8 +24,9 @@
 
 ### 寫一個遞迴函數 `function umleven(n)` 來求算 `2*4 + 4*6 + 6*8...+(n-2)*n`
 
-### 試宣告一字串陣列 `name[4][10]`，讓使用者自行輸入四個英文名字於陣列中，輸出第一個和第三個名字。
+(n最小為 4, 只會出現偶數)
 
+### 宣告陣列 `name`，讓使用者自行輸入四個英文名字於陣列中，輸出第一個和第三個名字的單數個字母。
 
 ### 印出下圖，並轉 90°
 
@@ -50,7 +51,7 @@
 
 ### 找出`10~20`的質數，並列出前述各質數在1~100的倍數
 
-### 龜兔賽跑，兔子每秒可以跑6公尺，烏龜每秒跑0.5公尺，他們參加100公尺競賽，兔子很囂張為了挑釁烏龜每跑5秒鐘又故意後退1公尺，兔子在途中還可以偷懶休息幾秒鐘再繼續跑並且贏得比賽?
+### 龜兔賽跑，兔子每秒可以跑6公尺，烏龜每秒跑0.5公尺，他們參加100公尺競賽：兔子故意用每跑5秒鐘後退1公尺的方式來挑釁烏龜，請問兔子在途中還可以偷懶休息幾秒鐘再繼續跑並且贏得比賽?
 
 ### 假設於某項實驗中，原有 b隻細菌，每經過20分鐘細菌數量會增加為原來的2倍(2b)，試寫一遞迴函數`function twofold(b, m)` 。讓使用者輸入分鐘數 m，並計算在沒有細菌死亡的狀況下，m 分鐘後的細菌有幾隻。
 
@@ -59,12 +60,15 @@
 
 ### 運用Caesar cipher: 明文中的所有字母加密，自訂一個平移參數。讓使用者輸入 5 個字母，字每向後平移 3 個數，印出加密結果
 
-### 運用 Borda Count。算出下面的候選人分數
+### 運用 Borda Count。算出下面的候選人分數。
+
+(第一順位得4分、第二順位得3分、第三順位得2分、第四順位得1分)
 
 ![](https://i.imgur.com/rWpuyyk.png =500x)
 
 
 ## 第二階段
+<<<<<<< HEAD
 
 回答以下問題的 `console.log` 印出了什麼
 
@@ -297,4 +301,238 @@ foo(a)
 console.log(a)
 ```
 
+=======
+
+回答以下問題的 `console.log` 印出了什麼
+
+### 問題1
+
+```javascript
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+var a = function() {
+  console.log(b);
+  b = 3;
+}
+```
+
+### 問題2
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題3
+
+`function a1`加了一個`if`
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  if (1) {
+    console.log(b);
+    var b = 4;
+  }
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題4
+
+`var`改用`let`
+
+```javascript=
+var b = 1;
+
+console.log(b);
+a();
+console.log(b);
+
+function a() {
+  if (1) {
+    console.log(b);
+    let b = 4;
+  }
+  console.log(b);
+  var b = 2;
+}
+```
+
+### 問題5
+
+`var`, `let`, `const`的差別??
+
+```javascript=
+var a = 1;
+var a = 10;
+console.log(a);
+```
+```javascript=
+//ES6
+let b = 2;
+let b = 20;
+//b = 30;
+console.log(b);
+```
+```javascript=
+//ES6
+const c = 3;
+const c = 30;
+// c = 20;
+console.log(c);
+```
+
+### 問題6
+
+function name的用途。
+
+```javascript=
+var a = function b() {
+  console.log('c');
+}
+
+a();
+b();
+```
+
+### 問題7
+
+
+```javascript=
+function b() {
+  console.log('c');
+}
+
+var a = b();
+
+b();
+a();
+```
+
+### 問題8
+
+What is `this`？
+console.log(); 印出什麼呢？
+
+```javascript=
+var c = {
+  name: 'The c object',
+  log: function(){
+    var self = this;
+    log1 = function () {
+      console.log(self);
+      console.log(this);
+    }
+    this.log2 = function (){
+      console.log(self === this);
+  }
+  log1();
+  this.log2();
+  }
+}
+
+c.log();
+```
+[出處](http://disp.cc/b/11-9KhD)
+
+### 問題9
+
+
+```javascript=
+function getPerson() {
+  return
+  {
+    firstname: 'Knuckles'
+  }
+}
+
+console.log(getPerson());
+```
+
+### 問題10
+
+有一個`J()`的`constructor`
+
+```javascript=
+function J() {
+  this.name = "John";
+}
+
+var a = new J();
+a
+//J {name: "John"}
+a.__proto__.constructor
+//function J() {
+//  this.name = "John";
+// }
+J
+// function J() {
+//   this.name = "John";
+// }
+console.log(J.constructor);
+console.log(a.__proto__.__proto__.constructor);
+```
+
+最下面的`console.log()`會印什麼？
+
+
+### 問題11
+
+會不會執行`console.log("Hello");`?
+
+```javascript=
+var x = 10;
+switch(x) {
+    case "10": 
+    console.log("Hello");
+}
+```
+
+### 問題12
+
+請問會印出什麼
+
+```javascript=
+var i = 0;
+while(i --> 0) {
+  console.log(i);
+}
+```
+
+### 問題13
+
+```javascript=
+var a = [1, 2, 3]
+
+function foo(x) {
+    x.push(4)
+
+    x = [4, 5, 6]
+    x.push(7)
+}
+
+foo(a)
+console.log(a)
+```
+
+>>>>>>> 6d60d59291aac6a1550a43f060a0c8ed4948122e
 第二階段題目出處: https://hackmd.io/p/BJzOOmVkW#/
