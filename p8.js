@@ -19,15 +19,16 @@ rl.question('請輸入數值：', (num) => {
    var times = 0;
    console.log(divi(num * 100, times));
 
-
+   rl.close();
 });
 
 function divi(num, times) {
 
   times = times + 1;
   num = num / 3;
+  console.log(num);
 
-  if (Math.floor(num) === 0) {
+  if (Math.floor(num % 10) === 0) {
 
     return times;
 

@@ -5,7 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('計算在沒有細菌死亡的狀況下，＿分鐘後的細菌有幾隻。請輸入分鐘數：', (m) => {
+rl.question('每經過20分鐘細菌數量會增加為原來的2倍，原有10隻細菌，＿分鐘後的細菌有幾隻。請輸入分鐘數：', (m) => {
 
   const reg = new RegExp("^[0-9]*$");
 
@@ -16,12 +16,16 @@ rl.question('計算在沒有細菌死亡的狀況下，＿分鐘後的細菌有�
     m = Number(m);
   }
 
-  twofold(b,m);
+  twofold(10,m);
 
 rl.close();
 });
 
 
 function twofold(b, m) {
-
+  if(m=0){
+    return b;
+  }else{
+    //twofold(Math.pow(0.5b,1/20),m-1);
+  }
 }
