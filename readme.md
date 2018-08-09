@@ -71,6 +71,7 @@
 ## 第二階段
 
 回答以下問題的 `console.log` 印出了什麼
+要解釋執行結果為什麼是這樣。
 
 ### 問題1
 
@@ -279,7 +280,7 @@ switch(x) {
 請問會印出什麼
 
 ```javascript=
-var i = 0;
+var i = 10;
 while(i --> 0) {
   console.log(i);
 }
