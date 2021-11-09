@@ -5,35 +5,34 @@
 const prompt = require("prompt-sync")({ sigint: true });
 const input = prompt("請問有幾位? ");
 
-main(input);
+const lowerLimit = 0; // 設一個 0 的變數
 
-// 主程式
-function main(input) {
-  try {
-    checkInputValue(input);
-    let result = checkThePlaybackConditions(input);
-    console.log(result);
-  } catch (e) {
-    console.log(e.message);
-  }
+// 判斷非正整數數字
+function checkInput(inputValue) {
+  if (!Number.isInteger(+inputValue)) throw "非整數";
+  if (+inputValue < 0) throw "小於零";
 }
 
-// 檢查輸入的值, 排除小數點與非正整數數字, 若有則回傳錯誤訊息
-function checkInputValue(inputValue) {
-  if (!Number.isInteger(+inputValue)) {
-    throw new Error("非整數");
-  }
-  if (+inputValue < 0) {
-    throw new Error("小於零");
-  }
-}
-
-// 檢查播放條件(人數)
-function checkThePlaybackConditions(people) {
-  if (+people !== 0) {
+// 判斷要不要播放電影
+function seeAMovie(people) {
+  if (people !== 0) {
     console.log(typeof people);
     return "顧客人數 " + people + "，播放電影";
   } else {
     return "顧客人數 " + people + "，不播放電影";
   }
 }
+
+// 主程式
+function main(input) {
+  try {
+    checkInput(input);
+    console.log(input);
+    let result = seeAMovie(input);
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+main(input);
