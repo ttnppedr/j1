@@ -11,14 +11,14 @@ main(input);
 function main(input) {
   try {
     checkInputValue(input);
-    let result = checkThePlaybackConditions(+input);
+    let result = checkThePlaybackConditions(input);
     console.log(result);
   } catch (e) {
     console.log(e.message);
   }
 }
 
-// 檢查輸入的值, 若符合以下條件則回傳錯誤訊息
+// 檢查輸入的值, 排除小數點與非正整數數字, 若有則回傳錯誤訊息
 function checkInputValue(inputValue) {
   if (!Number.isInteger(+inputValue)) {
     throw new Error("非整數");
@@ -26,29 +26,12 @@ function checkInputValue(inputValue) {
   if (+inputValue < 0) {
     throw new Error("小於零");
   }
-  if (/0b/gi.test(inputValue)) {
-    throw new Error("二進位，請輸入0-9阿拉伯數字");
-  }
-  if (/0o/gi.test(inputValue)) {
-    throw new Error("八進位，請輸入0-9阿拉伯數字");
-  }
-  if (/0x/gi.test(inputValue)) {
-    throw new Error("十六進位，請輸入0-9阿拉伯數字");
-  }
-  if (/\d(?=e)|e(?=\d)/gi.test(inputValue)) {
-    throw new Error("科學符號e，請輸入0-9阿拉伯數字");
-  }
-  if (/\s/.test(inputValue)) {
-    throw new Error("有空白字元，請輸入0-9阿拉伯數字");
-  }
-  // if (/\D/.test(inputValue)) {
-  //   throw new Error("請輸入0-9阿拉伯數字");
-  // }
 }
 
 // 檢查播放條件(人數)
 function checkThePlaybackConditions(people) {
-  if (people !== 0) {
+  if (+people !== 0) {
+    console.log(typeof people);
     return "顧客人數 " + people + "，播放電影";
   } else {
     return "顧客人數 " + people + "，不播放電影";
