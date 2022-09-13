@@ -1,92 +1,69 @@
 // Q2. 使用者輸入兩個整數，將它們分別除以 3 ，判斷餘數是否相同，若相同，則於螢幕上顯示「餘數相同」。
 
+let CheckEmpty = require("./checkEmpty"); //空鑑定
+let CheckString = require("./checkString"); //字串鑑定
+let CheckDecimal = require("./checkDecimal"); // 十進位鑑定
+let CheckZahlen = require("./checkZahlen"); //整數鑑定
+let openReadLine = require("./openReadLine"); //開啟readline
 
-function Isnatural(n) {
-  if (n.length === 0) {
-    throw new Error("請輸入數字,不能為空");
-  } else if (n.replaceAll(" ", "").length === 0) {
-    throw new Error("請輸入數字,不能只輸入空格");
-  } else if (n != Number(n)) {
-    throw new Error("請輸入數字");
-  } else if (n !== String(Number(n))) {
-    throw new Error("請輸入十進位數字");
-  } else if (Number(n) !== Math.floor(Number(n))) {
-    throw new Error("請勿輸入小數");
+const rl = openReadLine();
+
+let Q2 = {
+  question: "請輸入兩個整數?這是第一個數字",
+  setNumber: [],
+  end: "",
+};
+
+question2(Q2);
+
+function question2(Q2) {
+  rl.question(Q2.question, (input) => {
+    check(input);
+  });
+}
+
+function check(input) {
+  try {
+    CheckEmpty(input);
+    CheckString(input);
+    CheckDecimal(input);
+    CheckZahlen(input);
+  } catch (error) {
+    console.log(error.message);
+    return question2(Q2);
+  }
+  setNumber(Q2, input);
+  decideNext(Q2);
+}
+
+function setNumber(Q2, input) {
+  Q2.setNumber.push(input);
+}
+
+function decideNext(Q2) {
+  if (Q2.setNumber.length === 2) {
+    console.log(remainderCalculate(Q2));
+    rl.close();
+  } else {
+    askAgain(Q2);
   }
 }
 
-function question(Q="請輸入兩個數字?這是第一個數字") {
-  const readline = require("node:readline");
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  rl.question(Q, (first) => {
-    try {
-      Isnatural(first)
-    } catch (error) {
-      console.log(error.message);
-      rl.close();
-      return question();
-    } 
-    rl.close();
-    function question2(first) {
-      const readline = require("node:readline");
-      const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-      });
-    
-      rl.question("請輸入兩個數字?這是第二個數字", (second) => {
-        try {
-          Isnatural(second)
-        } catch (error) {
-          console.log(error.message);
-          rl.close();
-          return question2();
-        } 
-        rl.close();
-        if (first % 3 == second % 3) {
-          console.log("餘數相同");
-        } else {
-          console.log("餘數不同");
-        }
-      });
-    }
-    question2(first)
-  });
+function remainderCalculate(Q2) {
+  if (Q2.setNumber[0] % 3 === Q2.setNumber[1] % 3) {
+    Q2.end = "餘數相同";
+  } else {
+    Q2.end = "餘數不同";
+  }
+  return Q2.end;
 }
 
+function askAgain(Q2) {
+  changeQuestion(Q2);
+  question2(Q2);
+}
 
-
-// function question(callback) {
-//   const readline = require("node:readline");
-//   const { stdin: input, stdout: output } = require("node:process");
-
-//   const rl = readline.createInterface({ input, output });
-//   rl.question("請輸入數字:", (n) => {
-//     if (Number.isInteger(Number(n))) {
-//       rl.close();
-//       if ( typeof(callback) === "function") {
-//         b = callback();
-//         return (n,b)
-//       } else {
-//         return n;
-//       }
-//     } else {
-//       rl.close();
-//       n = question();
-//       return n;
-//     }
-//   });
-// }
-
-a = question();
-// b = question("請輸入兩個數字?這是第二個數字")
-// if (a % 3 == b % 3) {
-//   console.log("餘數相同");
-// } else {
-//   console.log("餘數不同");
-// }
-
+function changeQuestion(Q2) {
+  Q2.question = "請輸入第二個數字:";
+  // return Q2;
+}
