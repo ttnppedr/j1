@@ -1,5 +1,5 @@
 function checkOneEmpty(input) {
-  if (input.length === 0) {
+  if (!input.length) {
     throw new Error("請輸入值,不能為空");
   }
 }
