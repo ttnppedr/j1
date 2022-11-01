@@ -29,13 +29,14 @@ function check(age) {
     return question3();
   };
   price(age);
+  console.log(`${ticket} 一張 ${price} 元,Have a nice day!`)
 }
 
 function price(age) {
   let end;
   age > 6 && age < 65
-  ? (end = "成票一張400元,Have a nice day!")
-  : (end = "優惠票一張200元,Have a nice day!");
+  ? end = 400
+  : end = 200;
   console.log(end);
   rl.close();
 }

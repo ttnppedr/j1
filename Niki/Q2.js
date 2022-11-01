@@ -24,7 +24,7 @@ function question2(Q2) {
 
 function check(input) {
   try {
-    CheckEmpty(input);
+    CheckEmpty(input); // 命名統一問題
     CheckString(input);
     CheckDecimal(input);
     CheckZahlen(input);
@@ -57,6 +57,12 @@ function remainderCalculate(Q2) {
   }
   return Q2.end;
 }
+
+function remainderCalculate(Q2) {
+  return (Q2.setNumber[0] % 3 === Q2.setNumber[1] % 3) ? "餘數相同" : "餘數不同"
+} 
+
+// 一個func做太多事情，利用boolean值的function 
 
 function askAgain(Q2) {
   changeQuestion(Q2);
