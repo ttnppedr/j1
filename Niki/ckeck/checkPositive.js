@@ -1,6 +1,6 @@
 function checkPositive(input) {
-  if (Number(input) !== Math.abs(Number(input))) {
-    throw new Error("請輸入正數");
+  if (Number(input) < 0) {
+    throw new Error("請勿輸入負數");
   }
 }
 
