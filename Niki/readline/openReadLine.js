@@ -7,4 +7,15 @@ function openReadLine() {
   return rl;
 }
 
-module.exports = openReadLine ;
+
+function readLine(question) {
+  return new Promise(function (resolve) {
+    const rl = openReadLine();
+    rl.question(question, (input) => {
+      rl.close();
+      resolve(input);
+    });
+  });
+}
+
+module.exports = readLine ;
