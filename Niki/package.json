@@ -4,7 +4,10 @@
   "description": "Niki-j1",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll"
+  },  
+  "jest": {
+    "transform": {}
   },
   "repository": {
     "type": "git",
@@ -12,6 +15,7 @@
   },
   "author": "Niki <frank29580649@gmail.com>",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://gitlab.com/dwatow/j1/issues"
   },
