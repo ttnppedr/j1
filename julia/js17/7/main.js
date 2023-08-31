@@ -8,9 +8,20 @@
 //    ***
 //     *
 
+let str = `
+    **  
+   **** 
+  ******
+ *******
+*******
+ *******
+  ******
+   **** 
+    **  
+`
 main()
 
-function main(){
+function main() {
   const verticalTreeShape = `
     ** ** 
    ******* 
@@ -21,5 +32,5 @@ function main(){
      ***
       *
   `
-  
+
 }

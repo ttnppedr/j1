@@ -1,6 +1,6 @@
 function checkBlank(value) {
   if (value === "") {
-    throw new Error("請輸入對應值或文字後再按enter")
+    throw new Error("不能直接按enter喔！")
   } if (/\s/.test(value)) {
     throw new Error("不能是空白字元喔！")
   }
@@ -24,9 +24,9 @@ function checkEven(number) {
   }
 }
 
-function checkLessThan4(number) {
-  if (number < 4) {
-    throw new Error("要輸入大於4的值喔")
+function checkNotLessThanY(x,y) {
+  if (x < y) {
+    throw new Error(`要輸入大於${y}的值喔`)
   }
 }
 
@@ -41,6 +41,6 @@ export {
   checkIsInteger,
   checkNegative,
   checkEven,
-  checkLessThan4,
+  checkNotLessThanY,
   checkIsLetter
 };

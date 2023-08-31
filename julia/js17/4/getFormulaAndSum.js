@@ -1,6 +1,6 @@
 // 輸入 n 印出 1 + 2 - 3 + 4 - 5 + 6...n 的算式與總和
 
-export function printSum(number) {
+export function getFormulaAndSum(number) {
   let sum = 0
   let formula = ""
   for (let i = 0; i <= number; i++) {

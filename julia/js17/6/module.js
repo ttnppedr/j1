@@ -3,8 +3,9 @@ import { checkBlank, checkIsLetter } from "../utils/variableCheck.js"
 import prompt from "../utils/getUserInput.js"
 
 export function getOddNameList() {
+  const inputCounts = 4  
   let oddNameList = []
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < inputCounts; i++) {
     const input = prompt(`請提供四個英文名字,現在第${i + 1}個`)
     checkBlank(input)
     checkIsLetter(input)
