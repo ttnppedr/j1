@@ -14,10 +14,10 @@ function getInputValue(questionName, ranking) {
   try {
     const input = prompt(questionName)
     validators(input)
-    return (Number(input))
+    return input
   } catch (error) {
     console.log(error.message);
-    return getInputValue(ranking)
+    return getInputValue(questionName,ranking)
   }
 }
 

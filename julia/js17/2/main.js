@@ -1,8 +1,10 @@
 // 2. 使用者輸入兩個整數，將它們分別除以 3 ，判斷餘數是否相同，若相同，則於螢幕上顯示「餘數相同」。
 
 import { Q2 } from "./Q2.js";
+import { getInputArray } from "./getInputArray.js";
 
-main()
+
+
 
 // function main() {
 
@@ -41,11 +43,39 @@ main()
 
 
 
+// function main() {
+//   const askTImes = 2;
+//   console.log(`請輸入${askTImes}個整數`)
+//   const textForSameRemainderOrNot = Q2(askTImes)
+//   console.log(textForSameRemainderOrNot);
+// }
+
+// import { sameRemainderOrNot } from "./sameRemainderOrNot.js";
+
+
+main()
+
 function main() {
-  const askTImes = 2;
-  console.log(`請輸入${askTImes}個整數`)
-  const textForSameRemainderOrNot = Q2(askTImes)
-  console.log(textForSameRemainderOrNot);
+  try {
+    const askTImes = 2;
+    console.log(`請輸入${askTImes}個整數`)
+    // const [firstInput, secondInput] = getInputArray(askTImes)
+    // const textForSameRemainderOrNot = Q2(firstInput, secondInput)
+    const inputList = getInputArray(askTImes)
+    const textForSameRemainderOrNot = Q2(inputList)
+    console.log(textForSameRemainderOrNot);
+  } catch (error) {
+    console.log(error.message);
+    main()
+  }
 }
 
 
+
+// function Q2(firstInput, secondInput) {
+// validators(firstInput)
+// validators(secondInput)
+// return sameRemainderOrNot(firstInput, secondInput)
+//   ? '餘數相同'
+//   : '餘數不同喔！'
+// }
