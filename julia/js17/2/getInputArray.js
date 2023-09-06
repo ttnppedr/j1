@@ -1,4 +1,4 @@
-import { checkBlank, checkIsInteger } from "../utils/variableCheck.js";
+import { isRequiredInput, isBlank, isInteger, isBinOctHexAndE } from "../utils/variableCheck.js";
 import prompt from '../utils/getUserInput.js';
 
 function getInputArray(askTImes) {
@@ -17,13 +17,15 @@ function getInputValue(questionName, ranking) {
     return input
   } catch (error) {
     console.log(error.message);
-    return getInputValue(questionName,ranking)
+    return getInputValue(questionName, ranking)
   }
 }
 
 function validators(value) {
-  checkBlank(value)
-  checkIsInteger(value)
+  isRequiredInput(value)
+  isBlank(value)
+  isBinOctHexAndE(value)
+  isInteger(value)
 }
 
 export { getInputValue, getInputArray }

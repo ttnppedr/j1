@@ -1,4 +1,4 @@
-import { umleven } from "./module.js";
+import { umleven } from "./umleven.js";
 
 describe ('驗證結果是否正確', () => {
   test('n=8',()=> {

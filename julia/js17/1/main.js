@@ -2,7 +2,7 @@
 // 讓使用者輸入客人的人數，並用「!」判斷人數，不為零顯示「照常播放電影」。
 
 import prompt from "../utils/getUserInput.js";
-import { Q1 } from "./Q1.js";
+import { playMovie } from "./playMovie.js";
 
 
 main()
@@ -10,8 +10,8 @@ main()
 function main() {
   const input = prompt('請問總共幾個人看電影？')
   try {
-    const playMovieOrNot = Q1(input)
-    console.log(playMovieOrNot);
+    const result = playMovie(input)
+    console.log(result);
 
   } catch (error) {
     console.log(error.message);

@@ -4,17 +4,17 @@ export function getFormulaAndSum(number) {
   let sum = 0
   let formula = ""
   for (let i = 0; i <= number; i++) {
-    if (i <=1 ) {
+    if (i <= 1) {
       sum = i
       formula = i
     } else if (i % 2 === 0) {
       sum += i
-      formula =`${formula} + ${i}`
+      formula = `${formula} + ${i}`
     } else {
       sum -= i
       formula = `${formula} - ${i}`
     }
   }
-  return `${formula}=${sum}`
+  return `${formula} = ${sum}`
 }
 

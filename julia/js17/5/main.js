@@ -1,15 +1,15 @@
-// 寫一個遞迴函數 function umleven(n) 來求算 2 * 4 + 4 * 6 + 6 * 8...+ (n - 2) * n
+// 寫一個遞迴函數 function umleven(n) 來求算 2 * 4 + 4 * 6 + 6 * 8...+ (n - 2) * n (n最小為 4, 只會出現偶數)
 
-import { Q5 } from "./Q5.js";
+import { getAnswer } from "./getAnswer.js";
 import prompt from "../utils/getUserInput.js"
 
 main()
 
 function main() {
   const input = prompt('求算 2 * 4 + 4 * 6 + 6 * 8...+ (n - 2) * n,請輸入n值')
-  try {      
-    const answer = Q5(input)
-    console.log(answer);
+  try {
+    const result = getAnswer(input)
+    console.log(result);
 
 
   } catch (error) {
