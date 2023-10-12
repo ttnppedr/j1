@@ -3,21 +3,21 @@ import prompt from '../utils/getUserInput.js';
 
 function getInputArray(askTImes) {
   return Array(askTImes)
-    .fill(undefined)
+    .fill(null)
     .map((input, index) => {
       const questionName = `第${index + 1}個`;
-      return getInputValue(questionName, index)
+      return getValidInputValue(questionName, index)
     })
 }
 
-function getInputValue(questionName, ranking) {
+function getValidInputValue(questionName, ranking) {
   try {
     const input = prompt(questionName)
     validators(input)
     return input
   } catch (error) {
     console.log(error.message);
-    return getInputValue(questionName, ranking)
+    return getValidInputValue(questionName, ranking)
   }
 }
 
@@ -28,4 +28,4 @@ function validators(value) {
   isInteger(value)
 }
 
-export { getInputValue, getInputArray }
+export { getValidInputValue, getInputArray }

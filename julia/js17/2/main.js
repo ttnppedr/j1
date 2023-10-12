@@ -1,6 +1,6 @@
 // 2. 使用者輸入兩個整數，將它們分別除以 3 ，判斷餘數是否相同，若相同，則於螢幕上顯示「餘數相同」。
 
-import { textForIsSameRemainder } from "./textForIsSameRemainder.js";
+import { textForIsSameRemainderForDivisor } from "./textForIsSameRemainderForDivisor.js";
 import { getInputArray } from "./getInputArray.js";
 
 
@@ -62,7 +62,7 @@ function main() {
     // const [firstInput, secondInput] = getInputArray(askTImes)
     // const textForSameRemainderOrNot = textForIsSameRemainder(firstInput, secondInput)
     const inputList = getInputArray(askTImes)
-    const result = textForIsSameRemainder(inputList)
+    const result = textForIsSameRemainderForDivisor(inputList)
     console.log(result);
   } catch (error) {
     console.log(error.message);
