@@ -54,6 +54,19 @@ function isBinOctHexAndE(input) {
 
 }
 
+function isLetter(value) {
+  if(/\d+/.test(value)){
+    throw new Error("不能是數字喔")
+  }
+  if(!/[A-Za-z]+/.test(value)){
+    throw new Error("請輸入英文名字")
+  }  
+}
+
+
+
+
+
 export {
   isRequiredInput,
   isBlank,
@@ -61,5 +74,6 @@ export {
   isNegative,
   isEven,
   isNotLessThanY,
-  isBinOctHexAndE
+  isBinOctHexAndE,
+  isLetter
 };

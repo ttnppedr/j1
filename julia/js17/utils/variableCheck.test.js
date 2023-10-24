@@ -63,7 +63,7 @@ describe("檢查進制與e科學符號",()=> {
     const input = "0x789"
     expect(() => {
       isBinOctHexAndE(input)
-    }).toThrow("不支援2,8,16進制,請輸入0~9阿拉伯數字")
+    }).toThrow("不支援16進制,請輸入0~9阿拉伯數字")
   })
 
   test("e", () => {
