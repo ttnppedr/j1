@@ -8,29 +8,26 @@
 //    ***
 //     *
 
-let str = `
-    **  
-   **** 
-  ******
- *******
-*******
- *******
-  ******
-   **** 
-    **  
-`
-main()
+// let str = `
+//     **  
+//    **** 
+//   ******
+//  *******
+// *******
+//  *******
+//   ******
+//    **** 
+//     **  
+// `
+import { graphRotate90 } from "./graphRotate90.js";
 
 function main() {
-  const verticalTreeShape = `
-    ** ** 
-   ******* 
-  *********
-  *********
-   *******
-    *****
-     ***
-      *
-  `
+  
+const graph = `  ** **  \n ******* \n*********\n*********\n ******* \n  *****  \n   ***   \n    *    `
 
+const result = graphRotate90(graph)
+console.log(result);
 }
+
+main()
+
