@@ -1,4 +1,4 @@
-//為什麼原本寫在迴圈裡會錯？
+//為什麼原本寫在迴圈裡會錯？因為沒跑完就跳出迴圈
 // export function isPrime(x) {
 // 	if (x <= 1) return
 // 	if (x === 2) {
