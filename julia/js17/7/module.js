@@ -22,9 +22,9 @@ function arr2DToStr(arr2D) {
 
 //i跟j命名語意化會更好
 function rotate90(arr, row, col) {
-	let arrRotate90 = [];
+	const arrRotate90 = [];
 	for (let i = 0; i < col; i++) {  //行迴圈
-		let eachRowForArrRotate90 = [];  //輔助陣列
+		const eachRowForArrRotate90 = [];  //輔助陣列
 		for (let j = 0; j < row; j++) {  //列迴圈
 			eachRowForArrRotate90[j] = arr[j][i];  //定義陣列b的元素值
 		}

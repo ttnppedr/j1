@@ -1,6 +1,6 @@
 import { getPrimeAndIndex } from "./getPrimeAndIndex.js";
 
-describe('驗證結果', () => {
+describe('測試是否成功取出質數及其索引值', () => {
 	test('[1,2,3,4,5]', () => {
 		const array = [1, 2, 3, 4, 5]
 		const result = getPrimeAndIndex(array)

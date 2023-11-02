@@ -1,6 +1,6 @@
 import { divi } from "./divi.js"
 
-describe('驗證結果', () => {
+describe('測試n/3最少除幾次，小數第2位會為0', () => {
 	test('n = 10', () => {
 		const n = 10
 		const result = divi(n, n, 3, 0)

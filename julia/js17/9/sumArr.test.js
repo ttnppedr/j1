@@ -1,6 +1,6 @@
 import { sumArr } from "./sumArr.js"
 
-describe('是否成功相加', () => {
+describe('測試是否成功相加', () => {
 	test('兩者相加為[0,0,0,0,0]', () => {
 		const arr1 = [0, 0, 0, 0, 0]
 		const arr2 = [0, 0, 0, 0, 0]

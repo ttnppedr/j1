@@ -1,6 +1,6 @@
 import { graphRotate90 } from "./graphRotate90";
 
-describe('驗證結果', () => {
+describe('測試是否成功轉置', () => {
 	test('測試簡單三角形', () => {
 		const triangle = `12345\n 678 \n  9  `
 		const triangelRotate90 = `  1\n 62\n973\n 84\n  5`

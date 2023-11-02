@@ -1,7 +1,7 @@
 // import { getOddCharacter } from "./getOddCharacter.js";
 import { getOddCharacterByOddNameList } from "./getOddCharacterByOddNameList.js"
 
-describe('驗證結果', () => {
+describe('測試是否成功印出奇數名字的奇數字母', () => {
   test('四個名字分別為Apple,Banana,Cake,Dessert', () => {
     const name = ['Apple', 'Banana', 'Cake', 'Dessert']
     const result = getOddCharacterByOddNameList(name)
