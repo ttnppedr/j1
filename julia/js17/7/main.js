@@ -22,10 +22,10 @@
 import { graphRotate90 } from "./graphRotate90.js";
 
 function main() {
-  
-// const graph = `  ** **  \n ******* \n*********\n*********\n ******* \n  *****  \n   ***   \n    *    `
 
- const commonStar = `
+	// const graph = `  ** **  \n ******* \n*********\n*********\n ******* \n  *****  \n   ***   \n    *    `
+
+	const commonStar = `
   ** **  
  ******* 
 *********
@@ -36,8 +36,8 @@ function main() {
     *    
 `;
 
-const result = graphRotate90(commonStar)
-console.log(result);
+	const result = graphRotate90(commonStar)
+	console.log(result);
 }
 
 main()

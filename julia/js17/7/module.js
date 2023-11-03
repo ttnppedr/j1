@@ -7,17 +7,20 @@
 //   *****
 //    ***
 //     *
-export {strToArr2D, arr2DToStr, rotate90} 
+export { strToArr2D, arr2DToStr, rotate90 }
 
 
 function strToArr2D(str) {
 	// return str.split('\n').map(item => item.split(""))
 	// 加filter就可以直接複製題目使用，不用自己寫字串
-	return str.split('\n').map(item => item.split("")).filter((item) => item.length !== 0);
+	return str.split('\n')
+		.map(item => item.split(""))
+		.filter((item) => item.length !== 0);
 }
 
 function arr2DToStr(arr2D) {
-	return arr2D.map(item => item.join('')).join('\n')
+	return arr2D.map(item => item.join(''))
+		.join('\n')
 }
 
 //i跟j命名語意化會更好

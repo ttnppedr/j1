@@ -9,9 +9,11 @@ function main() {
 	const n = prompt('請輸入一個正整數')
 	try {
 		validators(n)
-		const counts = 0
-		const result = divi(n, 3, counts)
-		console.log(result);
+		// const counts = 0
+		const divisor = 3
+		const result = divi(n, divisor)
+		// console.log(result);
+		console.log(`${n} 除以 ${divisor}時， 最少要除 ${result} 次， 小數點後第 2 位會等於 0`)
 	} catch (e) {
 		console.log(e.message);
 		return main()
