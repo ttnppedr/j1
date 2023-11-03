@@ -11,6 +11,18 @@ export function divi(n, divisor, counts) {
 	}
 }
 
+// vic寫法 由於字串就是字元陣列 所以可以使用slice解答
+// export function divi(input, index) {
+// 	let value = input / 3;
+// 	let time = index;
+// 	if (value.toFixed(3).slice(-2, -1) == "0") {
+// 		return time;
+// 	} else {
+// 		return divi(value, time + 1);
+// 	}
+// }
+
+
 
 
 
