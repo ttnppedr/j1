@@ -6,12 +6,8 @@ export function textForIsSameRemainderForDivisor(inputList) {
 
   const numberInputList = inputList.map(Number)
   const [firstInput, secondInput] = numberInputList
-  // 三元運算子只適合用在物件賦值
-  if (isSameRemainderForDivisor(firstInput, secondInput, 3)) {
-    return '餘數相同'
-  } else {
-    return '餘數不同喔！'
-  }
+
+  return isSameRemainderForDivisor(firstInput, secondInput, 3) ? '餘數相同' : '餘數不同喔！'
 }
 
 function validators(value) {
