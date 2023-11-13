@@ -10,8 +10,7 @@ function main() {
   const input = prompt('請問總共幾個人看電影？')
 
   try {
-    const result = playMovie(input)
-    console.log(result)
+    console.log(playMovie(input))
   } catch (error) {
     console.log(error.message)
 

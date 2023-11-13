@@ -5,11 +5,8 @@ export function playMovie(input) {
   validate(input)
 
   const people = Number(input)
-  const result = isAnyone(people)
-    ? `照常播電影`
-    : `停播`;
 
-  return result
+  return isAnyone(people) ? `照常播電影` : `停播`
 }
 
 function validate(input) {
