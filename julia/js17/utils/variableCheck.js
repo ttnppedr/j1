@@ -4,7 +4,6 @@ function isRequiredInput(value) {
   }
 }
 
-
 function isBlank(value) {
   if (/\s/.test(value)) {
     throw new Error("不能是空白字元喔！")
@@ -47,25 +46,21 @@ function isBinOctHexAndE(input) {
   if (input.startsWith('0x')) {
     throw new Error("不支援16進制,請輸入0~9阿拉伯數字")
   }
-  
+
   if (input.includes('e')) {
     throw new Error("不支援e科學符號,請輸入0~9阿拉伯數字")
   }
-
 }
 
 function isLetter(value) {
   if(/\d+/.test(value)){
     throw new Error("不能是數字喔")
   }
+
   if(!/[A-Za-z]+/.test(value)){
     throw new Error("請輸入英文名字")
-  }  
+  }
 }
-
-
-
-
 
 export {
   isRequiredInput,
