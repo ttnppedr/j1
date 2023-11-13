@@ -1,8 +1,8 @@
 import { isRequiredInput, isBlank, isInteger, isBinOctHexAndE } from "../utils/variableCheck.js"
 import prompt from "../utils/getUserInput.js"
 
-function getInputArray(askTImes) {
-  return Array(askTImes)
+function getInputArray(askTimes) {
+  return Array(askTimes)
     .fill(null)
     .map((input, index) => {
       const questionName = `第${index + 1}個`

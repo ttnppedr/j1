@@ -7,10 +7,10 @@ main()
 
 function main() {
   try {
-    const askTImes = 2
-    console.log(`請輸入${askTImes}個整數`)
+    const askTimes = 2
+    console.log(`請輸入${askTimes}個整數`)
 
-    const inputList = getInputArray(askTImes)
+    const inputList = getInputArray(askTimes)
     const result = textForIsSameRemainderForDivisor(inputList)
     console.log(result)
   } catch (error) {
