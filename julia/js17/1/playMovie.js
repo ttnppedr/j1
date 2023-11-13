@@ -4,7 +4,7 @@ import { isBinOctHexAndE, isBlank, isInteger, isNegative, isRequiredInput } from
 export function playMovie(input) {
   validate(input)
 
-  const people = Number(input)
+  const people = +input
 
   return isAnyone(people) ? `照常播電影` : `停播`
 }
